@@ -1,7 +1,7 @@
 # MultiChain Assets Tracker
 An EVM MultiChain Assets Tracker
 
-Easily Explore your assests across different EVM Compatible chains.
+Easily explore assets across different EVM Compatible chains in a single address search.
 
 ## dev stack
 - React/TS
