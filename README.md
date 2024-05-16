@@ -1,9 +1,9 @@
 # MultiChain Assets Tracker
-An EVM MultiChain Assets Tracker
+An easy EVM MultiChain Assets Tracker
 
 Easily explore assets across different EVM Compatible chains in a single address search.
 
-## dev stack
+## Dev Stack
 - React/TS
 - Tailwind CSS / DaisyUI
 - Covalent SDK

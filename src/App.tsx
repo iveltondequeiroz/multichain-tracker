@@ -1,13 +1,14 @@
 import { useState } from "react"
 import Header from "./components/Header"
 import SearchBar from "./components/SearchBar"
-import TokenList from "./components/TokenList"
 import Footer from "./components/Footer"
+import AssetsTabs from "./components/AssetsTabs"
+
 function App() {
 
   const [accountAddress, setAccountAddress] = useState('')
-  const [showAssets, setShowAssets] = useState(false)
   const [invalidAddress, setInvalidAddress] = useState(false)
+  const [showAssetsTabs, setShowAssetsTabs] = useState(false)
 
   const handleSearch = () => {
     const inputValue = (document.getElementById('accountAddress') as HTMLInputElement).value
@@ -15,7 +16,7 @@ function App() {
       let regex = new RegExp(/^(0x)?[0-9a-fA-F]{40}$/);
       if (regex.test(inputValue) == true) {
         setAccountAddress(inputValue);
-        setShowAssets(true);
+        setShowAssetsTabs(true);
         setInvalidAddress(false);
       } else {
         setInvalidAddress(true)
@@ -33,9 +34,9 @@ function App() {
           <span>Warning: Invalid account address!</span>
         </div>)
       }
-      <main className="flex-grow min-h-12">
-        {showAssets && <TokenList accountAddress={accountAddress}/>}
-      </main>
+      { showAssetsTabs &&
+        <AssetsTabs accountAddress={accountAddress}/>
+      }
       <Footer />
     </div>  
     </>

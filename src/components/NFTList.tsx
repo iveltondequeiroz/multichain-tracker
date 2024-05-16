@@ -1,14 +1,14 @@
 import "@covalenthq/goldrush-kit/styles.css";
 import {
     GoldRushProvider,
-    TokenBalancesListView,
+    NFTWalletTokenListView,
 } from "@covalenthq/goldrush-kit";
 
 type ListProps = {
   accountAddress: string;
 }
 
-const TokenList = ({accountAddress}: ListProps) => {
+const NFTList = ({accountAddress}: ListProps) => {
   return (
       <div>
         <GoldRushProvider
@@ -16,7 +16,7 @@ const TokenList = ({accountAddress}: ListProps) => {
           mode="dark"
           color="emerald"
         >
-          <TokenBalancesListView
+          <NFTWalletTokenListView
             chain_names={[
               "eth-mainnet",
               "matic-mainnet",
@@ -24,7 +24,6 @@ const TokenList = ({accountAddress}: ListProps) => {
               "avalanche-mainnet",
               "optimism-mainnet",
             ]}
-            hide_small_balances
             address={accountAddress}
           />
         </GoldRushProvider>
@@ -32,4 +31,4 @@ const TokenList = ({accountAddress}: ListProps) => {
   )
 }
 
-export default TokenList
+export default NFTList
